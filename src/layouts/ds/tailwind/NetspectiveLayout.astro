@@ -5,7 +5,7 @@ import NetspectiveFooter  from "./NetspectiveFooter.astro";
 // export interface Props {
 // 	readonly route: Route<any, any>;
 // }
-const { route } = Astro.props;
+//const { route } = Astro.props;
 //const r = routes(Astro, Astro.props.route);
 ---
 <!DOCTYPE html>
@@ -127,7 +127,7 @@ img[src*='#center'] {
 }
 </style>
   <body>
-      <NetspectiveHeader route={route} />
+      <NetspectiveHeader/>
             <slot />
      <NetspectiveFooter />  
   </body>
