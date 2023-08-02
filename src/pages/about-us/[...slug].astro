@@ -1,23 +1,5 @@
 ---
 import NetspectiveLayout from "../../layouts/ds/tailwind/NetspectiveLayout.astro"
-
-import { getCollection } from "astro:content";
-
-// export const aboutusSevicesCollection = "about-us" as const; // export required because Astro needs it in getStaticPaths()
-// export const consultingSevicesEntries = await getCollection<typeof aboutusSevicesCollection>(aboutusSevicesCollection);
-// export async function getStaticPaths() {
-//   return consultingSevicesEntries.map(entry => ({
-//     params: { slug: entry.slug }, props: { entry },
-//   }));
-// }
-
-// export const prerender = true;
-// console.log("hi");
-// const { entry } = Astro.props;
-// const { Content } = await entry.render();
-// console.log(Astro.props);
-// console.log("1111111111111111111",{Content});
-//const r = route(Astro, { originFsPath: "src/pages/[...slug].astro" }, { entry: {collection: aboutusSevicesCollection, entry } });
 ---
 <NetspectiveLayout>
   <main>
