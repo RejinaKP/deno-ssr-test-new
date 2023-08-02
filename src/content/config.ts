@@ -1,5 +1,6 @@
 import newsCollection from "./news/_collection";
 import aboutusSevicesCollection from "./about-us/_collection";
+import industriesCollection from "./industries/_collection"
 /**
  * We define collections outside of config.ts so that they can easily be removed
  * during development or need to be pulled into different Astro projects.
@@ -10,6 +11,7 @@ import aboutusSevicesCollection from "./about-us/_collection";
 export const collections = {
   'news': newsCollection,
   'about-us': aboutusSevicesCollection,
+  'industries': industriesCollection,
 } as const;
 
 export type ContentCollection = keyof typeof collections;

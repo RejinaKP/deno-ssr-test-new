@@ -1,8 +1,10 @@
 ---
+import NetspectiveLayout from "../../layouts/ds/tailwind/NetspectiveLayout.astro"
+
 import { getCollection } from "astro:content";
 
-export const aboutusSevicesCollection = "about-us" as const; // export required because Astro needs it in getStaticPaths()
-export const consultingSevicesEntries = await getCollection<typeof aboutusSevicesCollection>(aboutusSevicesCollection);
+export const industriesSevicesCollection = "industries" as const; // export required because Astro needs it in getStaticPaths()
+export const consultingSevicesEntries = await getCollection<typeof industriesSevicesCollection>(industriesSevicesCollection);
 export async function getStaticPaths() {
   return consultingSevicesEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
@@ -15,7 +17,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 //const r = route(Astro, { originFsPath: "src/pages/[...slug].astro" }, { entry: {collection: aboutusSevicesCollection, entry } });
 ---
-
+<NetspectiveLayout>
   <main>
     <section class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
       <article class="pb-6 curated-content">
@@ -33,3 +35,4 @@ const { Content } = await entry.render();
       <p>Technology, consulting, and solutions focused on firms impacted by FDA, ONC, NIST or other safety, privacy, and security regulations.</p>
     </article>
   </section>
+</NetspectiveLayout>
