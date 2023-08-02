@@ -1,10 +1,10 @@
 ---
-import NetspectiveLayout from "../../layouts/ds/tailwind/NetspectiveLayout.astro"
+import NetspectiveLayout from "../layouts/ds/tailwind/NetspectiveLayout.astro"
 
 import { getCollection } from "astro:content";
 
-export const industriesSevicesCollection = "industries" as const; // export required because Astro needs it in getStaticPaths()
-export const consultingSevicesEntries = await getCollection<typeof industriesSevicesCollection>(industriesSevicesCollection);
+export const aboutusSevicesCollection = "about-us" as const; // export required because Astro needs it in getStaticPaths()
+export const consultingSevicesEntries = await getCollection<typeof aboutusSevicesCollection>(aboutusSevicesCollection);
 export async function getStaticPaths() {
   return consultingSevicesEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 export const prerender = true;
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 //const r = route(Astro, { originFsPath: "src/pages/[...slug].astro" }, { entry: {collection: aboutusSevicesCollection, entry } });
