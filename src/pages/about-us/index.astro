@@ -1,34 +1,34 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import NetspectiveLayout from "../../layouts/ds/tailwind/NetspectiveLayout.astro";
+import { Content } from "../../content/about-us/about-us.md";
+import * as greatPost from "../../content/about-us/about-us.md";
 
-const newsEntries = await getCollection("about-us");
-console.log(newsEntries);
-export function formatDate(dateString: string | number | Date) {
-  const date = new Date(dateString);
-  const options = { year: 'numeric', month: 'short', day: 'numeric' };
-  return date.toLocaleDateString(undefined, options);
-}
+
+const { route } = Astro.props;
+
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medigy - Tailwind</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 
-    <style>
-        :root { background-color:transparent; }
-    </style>
-</head>
-<body style="background-image:url(images/bg-pattern.jpg)" class="bg-repeat">
-<div class="w-full h-screen min-h-screen text-base">
-  
+<NetspectiveLayout>
+  <main>
+    <section class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <article class="pb-6 curated-content">
+        <div class="text-center">
+         <h3 class="text-2xl font-bold mb-10 mt-4 text-center inline-flex"><span class="bg-orange-600 text-white py-2 px-8">{greatPost.frontmatter.title}</span></h3>
+        </div>
+         <Content/>
+      <div class="clear"></div>
+      </article>  
+    </section>
+  </main>
+  <section class="px-8 sm:px-6 lg:px-8 bg-cover bg-no-repeat bg-center py-10 bg-image">
+    <article class="mx-auto max-w-6xl py-9 text-white text-center">
+      <h3 class="text-2xl font-semibold pb-5">Netspective is a leader in Technology and Consulting services in regulated markets - Healthcare, Government and Medical Technology.</h3>
+      <p>Technology, consulting, and solutions focused on firms impacted by FDA, ONC, NIST or other safety, privacy, and security regulations.</p>
+    </article>
+  </section>
+</NetspectiveLayout>
 
-<main class="min-h-main">
   
-</main>
-</div>
-</body>
-</html>
+  
+  
+  
