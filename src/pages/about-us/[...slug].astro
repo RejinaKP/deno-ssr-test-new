@@ -3,14 +3,8 @@ import NetspectiveLayout from "../../layouts/ds/tailwind/NetspectiveLayout.astro
 
 import { getCollection } from "astro:content";
 
-export const aboutusSevicesCollection = "about-us" as const; // export required because Astro needs it in getStaticPaths()
-export const consultingSevicesEntries = await getCollection<typeof aboutusSevicesCollection>(aboutusSevicesCollection);
-export async function getStaticPaths() {
-  return consultingSevicesEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
-}
-
+export const aboutusSevicesCollection = "about-us" as const;
 console.log("hi");
+
 ---
 
